@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Checkout cancelled{% endblock %}
+{% block content %}
+<section class="message-card">
+  <h1>No worries!</h1>
+  <p>Your checkout was cancelled and your card was <strong>not</strong> charged.</p>
+  <p><a class="buy-button" href="{{ url_for('store.index') }}">Back to the books</a></p>
+</section>
+{% endblock %}

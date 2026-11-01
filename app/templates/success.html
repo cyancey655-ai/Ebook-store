@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Thank you! · {{ product.title }}{% endblock %}
+{% block content %}
+<section class="message-card">
+  <h1>🎉 Thank you for your purchase!</h1>
+  <p>Your copy of <strong>{{ product.title }}</strong> is ready.</p>
+  <p>
+    <a class="buy-button download-button" href="{{ download_url }}">Download your ebook (PDF)</a>
+  </p>
+  <p class="fineprint">
+    This download link works for the next {{ valid_hours }} hours — please save the
+    file somewhere safe so you can re-read it any time. Happy reading! 📖
+  </p>
+</section>
+{% endblock %}

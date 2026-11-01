@@ -1,0 +1,106 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #fdf6ff;
+  color: #3d2c4e;
+  line-height: 1.5;
+}
+
+.site-header {
+  background: linear-gradient(90deg, #b388ff, #f48fb1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.brand {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+}
+
+.flashes { max-width: 760px; margin: 1rem auto 0; padding: 0 1rem; }
+.flash {
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin: 0;
+}
+.flash-info { background: #e3f2fd; border: 1px solid #90caf9; }
+.flash-error { background: #fdecea; border: 1px solid #ef9a9a; }
+
+.shop-intro { text-align: center; margin-bottom: 1.5rem; }
+.shop-intro h1 { margin-bottom: 0.25rem; }
+
+.book-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(120, 80, 160, 0.15);
+  padding: 1.25rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.cover {
+  width: 260px;
+  max-width: 100%;
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+.book-info { flex: 1 1 260px; }
+.book-info h2 { margin-top: 0; }
+.author { margin-top: -0.5rem; color: #7b5ea7; font-weight: 600; }
+
+.ages {
+  display: inline-block;
+  background: #fff3c4;
+  border: 1px solid #f2d06b;
+  border-radius: 999px;
+  padding: 0.1rem 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.price { font-size: 1.6rem; font-weight: 800; margin: 0.5rem 0; }
+
+.buy-button {
+  display: inline-block;
+  background: #8e24aa;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+.buy-button:hover:not(:disabled) { background: #7b1fa2; }
+.buy-button:disabled { background: #bdbdbd; cursor: not-allowed; }
+.download-button { font-size: 1.15rem; }
+
+.fineprint { color: #6d5b85; font-size: 0.9rem; }
+
+.message-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(120, 80, 160, 0.15);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.site-footer {
+  text-align: center;
+  color: #8a76a3;
+  font-size: 0.9rem;
+  padding: 1rem;
+}

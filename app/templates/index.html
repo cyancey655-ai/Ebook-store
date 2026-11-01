@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Books by Charity Lynn Yancey{% endblock %}
+{% block content %}
+<section class="shop-intro">
+  <h1>Storybooks for little readers</h1>
+  <p>Sweet, sparkly picture books written by Charity Lynn Yancey — buy once, download instantly, read together forever.</p>
+</section>
+
+{% for item in catalog %}
+<article class="book-card">
+  <img class="cover" src="{{ url_for('static', filename=item.product.cover) }}"
+       alt="Cover of {{ item.product.title }}">
+  <div class="book-info">
+    <h2>{{ item.product.title }}</h2>
+    <p class="author">by {{ item.product.author }}</p>
+    <span class="ages">{{ item.product.ages }}</span>
+    <p class="blurb">{{ item.product.blurb }}</p>
+    <p class="details">{{ item.product.details }}</p>
+    <p class="price">{{ item.price }}</p>
+    {% if checkout_ready %}
+    <form method="post" action="{{ url_for('store.buy', slug=item.slug) }}">
+      <button class="buy-button" type="submit">Buy now — {{ item.price }}</button>
+    </form>
+    <p class="fineprint">You'll get your download link right after checkout.</p>
+    {% else %}
+    <button class="buy-button" type="button" disabled>Checkout not configured yet</button>
+    <p class="fineprint">This shop is almost ready — online checkout is being set up. Please check back soon!</p>
+    {% endif %}
+  </div>
+</article>
+{% endfor %}
+{% endblock %}

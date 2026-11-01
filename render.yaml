@@ -1,0 +1,23 @@
+# Render deploy config — free tier (same shape as amani-chat-app)
+services:
+  - type: web
+    name: ebook-store
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: SECURE_COOKIES
+        value: "1"
+      - key: APP_BASE_URL
+        sync: false            # set to your https://<service>.onrender.com URL
+      - key: STRIPE_SECRET_KEY
+        sync: false            # Charity's Stripe secret key (live)
+      - key: STORE_PRICE_USD
+        value: "4.99"          # placeholder — Charity to confirm the real price
+      - key: STRIPE_TAX_CODE
+        value: txcd_10000000
+      - key: DOWNLOAD_TOKEN_MAX_AGE
+        value: "86400"
